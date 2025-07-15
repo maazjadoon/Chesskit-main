@@ -45,8 +45,16 @@ export const sendCommandsToWorker = (
 };
 
 export const getRecommendedWorkersNb = (): number => {
-  const hardwareConcurrency = typeof navigator !== "undefined" && navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 4;
-  const deviceMemory = typeof navigator !== "undefined" && "deviceMemory" in navigator && typeof navigator.deviceMemory === "number" ? navigator.deviceMemory : 4;
+  const hardwareConcurrency =
+    typeof navigator !== "undefined" && navigator.hardwareConcurrency
+      ? navigator.hardwareConcurrency
+      : 4;
+  const deviceMemory =
+    typeof navigator !== "undefined" &&
+    "deviceMemory" in navigator &&
+    typeof navigator.deviceMemory === "number"
+      ? navigator.deviceMemory
+      : 4;
 
   const maxWorkersNbFromThreads = Math.max(
     1,

@@ -22,7 +22,8 @@ export const isIosDevice = () =>
   typeof navigator !== "undefined" && /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 export const isMobileDevice = () =>
-  isIosDevice() || /Android|Opera Mini/i.test(navigator.userAgent);
+  typeof navigator !== "undefined" &&
+  (isIosDevice() || /Android|Opera Mini/i.test(navigator.userAgent));
 
 export const isEngineSupported = (name: EngineName): boolean => {
   switch (name) {
