@@ -78,4 +78,4 @@ const PgnImport: React.FC = () => {
   );
 };
 
-export default PgnImport; 
+export default PgnImport;
