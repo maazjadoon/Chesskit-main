@@ -71,7 +71,9 @@ export default function PanelToolBar() {
           <IconButton
             disabled={game.history().length === 0}
             onClick={() => {
-              navigator.clipboard?.writeText?.(game.pgn());
+              if (typeof navigator !== "undefined") {
+                navigator.clipboard?.writeText?.(game.pgn());
+              }
             }}
             sx={{ paddingX: 1.2, paddingY: 0.5 }}
           >

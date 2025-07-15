@@ -41,7 +41,9 @@ export default function GameDatabase() {
       if (typeof id !== "number") {
         throw new Error("Unable to copy game");
       }
-      await navigator.clipboard?.writeText?.(games[id - 1].pgn);
+      await (typeof navigator !== "undefined"
+        ? navigator.clipboard?.writeText?.(games[id - 1].pgn)
+        : Promise.resolve());
     },
     [games]
   );

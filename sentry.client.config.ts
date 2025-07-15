@@ -20,12 +20,8 @@ if (
     debug: false,
     initialScope: {
       extra: {
-        hardwareConcurrency: navigator.hardwareConcurrency,
-        deviceMemory:
-          "deviceMemory" in navigator &&
-          typeof navigator.deviceMemory === "number"
-            ? navigator.deviceMemory
-            : "unknown",
+        hardwareConcurrency: typeof navigator !== "undefined" && navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 4,
+        deviceMemory: typeof navigator !== "undefined" && "deviceMemory" in navigator && typeof navigator.deviceMemory === "number" ? navigator.deviceMemory : 4,
       },
     },
     ignoreErrors: [
