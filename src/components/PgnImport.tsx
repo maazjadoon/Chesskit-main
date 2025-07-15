@@ -73,11 +73,7 @@ const PgnImport: React.FC = () => {
       >
         Import
       </Button>
-      {error && (
-        <Alert severity="error">
-          {error}
-        </Alert>
-      )}
+      {error && <Alert severity="error">{error}</Alert>}
     </Stack>
   );
 };
